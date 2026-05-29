@@ -5,6 +5,8 @@ export const profile = {
   title: "AI/LLM Engineer",
   avatar: "", // Fill in your avatar URL, e.g. "https://avatars.githubusercontent.com/u/218558117"
   company: "", // Your current company / affiliation
+  companyZh: "复旦大学 计算与智能创新学院",
+  companyEn: "College of Computer Science and Artificial Intelligence, Fudan University",
   headline: "Building intelligent systems at the frontier of large language models.",
 
   about: [

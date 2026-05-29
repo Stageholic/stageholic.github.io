@@ -42,9 +42,15 @@ export default function Hero() {
         </p>
 
         {/* Company / Affiliation */}
-        {profile.company && (
-          <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 mb-6">
-            {profile.company}
+        {profile.companyZh && (
+          <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-1"
+            style={{ fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif' }}>
+            {profile.companyZh}
+          </p>
+        )}
+        {profile.companyEn && (
+          <p className="text-base md:text-lg text-gray-400 dark:text-gray-500 mb-6">
+            {profile.companyEn}
           </p>
         )}
 
