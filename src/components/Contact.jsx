@@ -12,17 +12,19 @@ export default function Contact() {
           opportunities.
         </p>
         <div className="flex justify-center gap-4 mb-8">
-          {profile.socialLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-medium"
-            >
-              {{ github: "GitHub", openreview: "OpenReview", email: "Email" }[link.icon]}
-            </a>
-          ))}
+          {profile.socialLinks.map((link) => {
+            const isMailto = link.url.startsWith("mailto:");
+            return (
+              <a
+                key={link.name}
+                href={link.url}
+                {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-medium"
+              >
+                {{ github: "GitHub", openreview: "OpenReview", email: "Email" }[link.icon]}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

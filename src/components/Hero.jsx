@@ -62,18 +62,20 @@ export default function Hero() {
 
         {/* Social links */}
         <div className="flex justify-center gap-4 mb-12">
-          {profile.socialLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full text-gray-400 dark:text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all"
-              aria-label={link.name}
-            >
-              {iconMap[link.icon]}
-            </a>
-          ))}
+          {profile.socialLinks.map((link) => {
+            const isMailto = link.url.startsWith("mailto:");
+            return (
+              <a
+                key={link.name}
+                href={link.url}
+                {...(!isMailto && { target: "_blank", rel: "noopener noreferrer" })}
+                className="p-3 rounded-full text-gray-400 dark:text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all"
+                aria-label={link.name}
+              >
+                {iconMap[link.icon]}
+              </a>
+            );
+          })}
         </div>
 
         {/* Scroll hint */}
