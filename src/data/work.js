@@ -1,12 +1,16 @@
-export const projects = [
+export const works = [
   {
     id: 1,
     title: "LLM Evaluation Suite",
     description:
       "A comprehensive benchmark toolkit for evaluating LLM outputs across accuracy, safety, and factual consistency. Supports custom metrics and multi-model comparison.",
     tags: ["Python", "LLM", "Evaluation", "Open Source"],
-    link: "https://github.com/Stageholic/llm-eval-suite",
-    githubLink: "https://github.com/Stageholic/llm-eval-suite",
+    githubUrl: "https://github.com/Stageholic/llm-eval-suite",
+    demoUrl: "#",
+    article: {
+      title: "Building a Robust LLM Evaluation Pipeline",
+      url: "#",
+    },
   },
   {
     id: 2,
@@ -14,8 +18,12 @@ export const projects = [
     description:
       "End-to-end RAG system with pluggable components: document parsing, chunking strategies, embedding backends, and retrieval + reranking pipelines. Built for production use.",
     tags: ["Python", "RAG", "Vector DB", "LangChain"],
-    link: "https://github.com/Stageholic/rag-pipeline",
-    githubLink: "https://github.com/Stageholic/rag-pipeline",
+    githubUrl: "https://github.com/Stageholic/rag-pipeline",
+    demoUrl: "#",
+    article: {
+      title: "RAG at Scale: Lessons from Processing 10M+ Documents",
+      url: "#",
+    },
   },
   {
     id: 3,
@@ -23,7 +31,8 @@ export const projects = [
     description:
       "A visual playground for designing and testing multi-agent LLM systems. Define agent roles, tool access, and interaction protocols, then watch them collaborate.",
     tags: ["TypeScript", "React", "Agents", "Demo"],
-    link: "https://github.com/Stageholic/agent-playground",
-    githubLink: "https://github.com/Stageholic/agent-playground",
+    githubUrl: "https://github.com/Stageholic/agent-playground",
+    demoUrl: "#",
+    article: null,
   },
 ];
