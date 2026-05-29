@@ -44,7 +44,7 @@ export default function Navbar() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="text-lg font-bold tracking-tight text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
         >
-          Stageholic
+          Jimin Chen
         </button>
 
         {/* Desktop nav */}
