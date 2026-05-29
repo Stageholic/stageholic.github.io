@@ -44,7 +44,11 @@ export default function About() {
               <div className="space-y-4">
                 {profile.education.map((edu, i) => (
                   <div key={i}>
-                    <p className="font-semibold text-gray-900 dark:text-white">{edu.school}</p>
+                    <p className="font-semibold text-gray-900 dark:text-white"
+                      style={{ fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif' }}>
+                      {edu.schoolZh}
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{edu.schoolEn}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{edu.degree}</p>
                     <p className="text-sm text-gray-400 dark:text-gray-500">{edu.year}</p>
                   </div>
@@ -60,10 +64,23 @@ export default function About() {
               <div className="space-y-4">
                 {profile.experience.map((exp, i) => (
                   <div key={i}>
-                    <p className="font-semibold text-gray-900 dark:text-white">{exp.company}</p>
+                    <p className="font-semibold text-gray-900 dark:text-white"
+                      style={{ fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif' }}>
+                      {exp.companyZh}
+                    </p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">{exp.companyEn}</p>
                     <p className="text-sm text-gray-500 dark:text-gray-400">{exp.role}</p>
                     <p className="text-sm text-gray-400 dark:text-gray-500">{exp.period}</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{exp.description}</p>
+                    {exp.highlights && exp.highlights.length > 0 && (
+                      <ul className="mt-2 space-y-1">
+                        {exp.highlights.map((h, j) => (
+                          <li key={j} className="text-sm text-gray-500 dark:text-gray-400 flex items-start gap-2">
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-purple-400 shrink-0" />
+                            {h}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
@@ -88,36 +105,55 @@ export default function About() {
           </div>
         </div>
 
-        {/* Independent Articles */}
-        {profile.articles.length > 0 && (
+        {/* Publications */}
+        {profile.publications.length > 0 && (
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-400 dark:text-gray-500 mb-4">
-              Articles
+              Publications
             </h4>
             <div className="space-y-6">
-              {profile.articles.map((article, i) => (
-                <a
-                  key={i}
-                  href={article.link}
-                  className="group block pb-6 border-b border-gray-200 dark:border-gray-800 last:border-0"
-                >
-                  <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 mb-1">
-                    <time dateTime={article.date}>
-                      {new Date(article.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
-                    </time>
-                    <span>·</span>
-                    <span>{article.tags.join(", ")}</span>
-                  </div>
-                  <h5 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {article.title}
-                  </h5>
-                  <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{article.summary}</p>
-                </a>
-              ))}
+              {profile.publications.map((pub, i) => {
+                  const isLinked = pub.link && pub.link !== "#";
+                  const sharedClasses = "group block pb-6 border-b border-gray-200 dark:border-gray-800 last:border-0";
+                  const content = (
+                    <>
+                      <h5 className={`text-lg font-semibold text-gray-900 dark:text-white ${isLinked ? "group-hover:text-purple-600 dark:group-hover:text-purple-400" : ""} transition-colors`}>
+                        {pub.title}
+                      </h5>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                        {pub.authors.split(", ").map((author, j) => (
+                          <span key={j}>
+                            {j > 0 && ", "}
+                            {author === "Jimin Chen" ? (
+                              <span className="font-semibold text-purple-600 dark:text-purple-400">{author}</span>
+                            ) : (
+                              author
+                            )}
+                          </span>
+                        ))}
+                      </p>
+                      <div className="flex items-center gap-2 text-sm text-gray-400 dark:text-gray-500 mt-1">
+                        <span>{pub.venue}</span>
+                        <span>·</span>
+                        <time dateTime={pub.date}>
+                          {new Date(pub.date).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                          })}
+                        </time>
+                      </div>
+                    </>
+                  );
+                  const extraProps = isLinked
+                    ? { href: pub.link, target: "_blank", rel: "noopener noreferrer" }
+                    : {};
+                  const Tag = isLinked ? "a" : "div";
+                  return (
+                    <Tag key={i} className={sharedClasses} {...extraProps}>
+                      {content}
+                    </Tag>
+                  );
+                })}
             </div>
           </div>
         )}

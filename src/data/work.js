@@ -1,38 +1,16 @@
 export const works = [
   {
     id: 1,
-    title: "LLM Evaluation Suite",
+    title: "WAM-Bench: A Multi-Navigation Instruction Benchmark for Autonomous Driving",
     description:
-      "A comprehensive benchmark toolkit for evaluating LLM outputs across accuracy, safety, and factual consistency. Supports custom metrics and multi-model comparison.",
-    tags: ["Python", "LLM", "Evaluation", "Open Source"],
-    githubUrl: "https://github.com/Stageholic/llm-eval-suite",
+      "A large-scale benchmark for evaluating VLA models on instruction-following in autonomous driving. Contains 14k+ real-world driving segments (~30 hours) across 20 navigation categories, going beyond basic turn commands. Introduces NFS (Navigation Following Score), a multi-dimensional metric via rule-based and VLM scoring. Provides baselines for mainstream autoregressive and diffusion-based VLA models.",
+    tags: ["Autonomous Driving", "Benchmark", "Multi-Navigation", "Instruction Following"],
+    githubUrl: "#",
+    huggingfaceUrl: "#",
     demoUrl: "#",
     article: {
-      title: "Building a Robust LLM Evaluation Pipeline",
-      url: "#",
+      title: "WAM-Bench: A Multi-Navigation Instruction Benchmark for Autonomous Driving",
+      url: null,
     },
-  },
-  {
-    id: 2,
-    title: "RAG Pipeline Builder",
-    description:
-      "End-to-end RAG system with pluggable components: document parsing, chunking strategies, embedding backends, and retrieval + reranking pipelines. Built for production use.",
-    tags: ["Python", "RAG", "Vector DB", "LangChain"],
-    githubUrl: "https://github.com/Stageholic/rag-pipeline",
-    demoUrl: "#",
-    article: {
-      title: "RAG at Scale: Lessons from Processing 10M+ Documents",
-      url: "#",
-    },
-  },
-  {
-    id: 3,
-    title: "Agent Playground",
-    description:
-      "A visual playground for designing and testing multi-agent LLM systems. Define agent roles, tool access, and interaction protocols, then watch them collaborate.",
-    tags: ["TypeScript", "React", "Agents", "Demo"],
-    githubUrl: "https://github.com/Stageholic/agent-playground",
-    demoUrl: "#",
-    article: null,
   },
 ];

@@ -8,7 +8,7 @@ export default function Contact() {
           Get in Touch
         </h2>
         <p className="text-gray-600 dark:text-gray-400 text-lg mb-8">
-          I'm always open to discussing LLM projects, research collaborations, or interesting
+          I'm always open to discussing AI projects, research collaborations, or interesting
           opportunities.
         </p>
         <div className="flex justify-center gap-4 mb-8">
