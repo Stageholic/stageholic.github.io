@@ -2,7 +2,7 @@ import { works } from "../data/work";
 
 export default function Work() {
   return (
-    <section id="work" className="py-24 px-6 bg-gray-50 dark:bg-gray-900/50">
+    <section id="work" className="py-16 px-6 bg-gray-50 dark:bg-gray-900/50">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-12">
           Work
