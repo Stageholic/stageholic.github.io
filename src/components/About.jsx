@@ -12,13 +12,17 @@ export default function About() {
         <div className="flex items-center gap-6 mb-10">
           <div className="w-24 h-24 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-3xl font-bold text-purple-600 dark:text-purple-400 shrink-0 overflow-hidden">
             {profile.avatar ? (
-              <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
+              <img src={profile.avatar} alt={profile.nameZh} className="w-full h-full object-cover" />
             ) : (
-              profile.name[0]
+              profile.nameZh[0]
             )}
           </div>
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{profile.name}</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white"
+              style={{ fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif' }}>
+              {profile.nameZh}
+            </h3>
+            <p className="text-lg text-gray-400 dark:text-gray-500">{profile.nameEn}</p>
             <p className="text-lg text-purple-600 dark:text-purple-400">{profile.title}</p>
           </div>
         </div>

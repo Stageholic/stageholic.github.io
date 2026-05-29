@@ -1,5 +1,7 @@
 export const profile = {
   name: "Stageholic",
+  nameZh: "陈济民",
+  nameEn: "Jimin Chen",
   title: "AI/LLM Engineer",
   avatar: "", // Fill in your avatar URL, e.g. "https://avatars.githubusercontent.com/u/218558117"
   company: "", // Your current company / affiliation

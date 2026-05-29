@@ -33,9 +33,13 @@ export default function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
-          {profile.name}
+        <h1 className="text-6xl md:text-8xl font-bold tracking-wide text-gray-900 dark:text-white mb-2"
+          style={{ fontFamily: '"PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif' }}>
+          {profile.nameZh}
         </h1>
+        <p className="text-2xl md:text-3xl font-medium text-gray-400 dark:text-gray-500 mb-6 tracking-tight">
+          {profile.nameEn}
+        </p>
 
         {/* Company / Affiliation */}
         {profile.company && (
