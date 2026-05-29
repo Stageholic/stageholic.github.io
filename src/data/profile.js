@@ -2,6 +2,7 @@ export const profile = {
   name: "Stageholic",
   title: "AI/LLM Engineer",
   avatar: "", // Fill in your avatar URL, e.g. "https://avatars.githubusercontent.com/u/218558117"
+  company: "", // Your current company / affiliation
   headline: "Building intelligent systems at the frontier of large language models.",
 
   about: [

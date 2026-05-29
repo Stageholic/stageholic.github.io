@@ -23,34 +23,49 @@ export default function Hero() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center px-6 pt-16">
       <div className="text-center max-w-2xl">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-gray-900 dark:text-white mb-6">
+        {/* Avatar */}
+        <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center text-5xl md:text-6xl font-bold text-purple-600 dark:text-purple-400 overflow-hidden ring-4 ring-purple-100 dark:ring-purple-900/50">
+          {profile.avatar ? (
+            <img src={profile.avatar} alt={profile.name} className="w-full h-full object-cover" />
+          ) : (
+            profile.name[0]
+          )}
+        </div>
+
+        {/* Name */}
+        <h1 className="text-6xl md:text-8xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
           {profile.name}
         </h1>
-        <p className="text-xl md:text-2xl font-medium text-purple-600 dark:text-purple-400 mb-4">
-          {profile.title}
-        </p>
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
-          {profile.headline}
-        </p>
-        <div className="flex justify-center gap-4">
+
+        {/* Company / Affiliation */}
+        {profile.company && (
+          <p className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 mb-6">
+            {profile.company}
+          </p>
+        )}
+
+        {/* Social links */}
+        <div className="flex justify-center gap-4 mb-12">
           {profile.socialLinks.map((link) => (
             <a
               key={link.name}
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all"
+              className="p-3 rounded-full text-gray-400 dark:text-gray-500 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-purple-50 dark:hover:bg-purple-900/30 transition-all"
               aria-label={link.name}
             >
               {iconMap[link.icon]}
             </a>
           ))}
         </div>
+
+        {/* Scroll hint */}
         <button
           onClick={() =>
             document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
           }
-          className="mt-12 inline-flex items-center gap-2 text-sm font-medium text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
+          className="inline-flex items-center gap-2 text-sm font-medium text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
         >
           Learn more
           <svg className="w-4 h-4 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
