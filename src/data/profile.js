@@ -2,7 +2,7 @@ export const profile = {
   name: "Stageholic",
   nameZh: "陈济民",
   nameEn: "Jimin Chen",
-  title: "AI/LLM Engineer",
+  title: "Master's Student",
   avatar: "", // Fill in your avatar URL, e.g. "https://avatars.githubusercontent.com/u/218558117"
   company: "", // Your current company / affiliation
   companyZh: "复旦大学 计算与智能创新学院",
@@ -66,7 +66,7 @@ export const profile = {
 
   socialLinks: [
     { name: "GitHub", url: "https://github.com/Stageholic", icon: "github" },
-    { name: "Twitter", url: "https://x.com/Stageholic", icon: "twitter" },
-    { name: "Email", url: "mailto:stageholic@example.com", icon: "email" },
+    { name: "OpenReview", url: "https://openreview.net/profile?id=~Jimin_Chen1", icon: "openreview" },
+    { name: "Email", url: "mailto:25213050113@m.fudan.edu.cn", icon: "email" },
   ],
 };

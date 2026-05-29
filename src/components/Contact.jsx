@@ -20,7 +20,7 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-purple-100 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300 transition-colors font-medium"
             >
-              {{ github: "GitHub", twitter: "Twitter", email: "Email" }[link.icon]}
+              {{ github: "GitHub", openreview: "OpenReview", email: "Email" }[link.icon]}
             </a>
           ))}
         </div>
